@@ -29,7 +29,7 @@ class Login extends Component {
     handleFormSubmit = (e) => {
         
         e.preventDefault();
-        /* Here is where all the login logic will go. Upon clicking the login button, we would like to utilize a login method that will send our entered credentials over to the server for verification. Once verified, it should store your token and send you to the protected route. */
+        
         this.Auth.login(this.state.email, this.state.password)
             .then(res => {
                 if (res === false) {
@@ -43,7 +43,7 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        /* Here is a great place to redirect someone who is already logged in to the protected route */
+        /* if someone is already logged in will be sent to the protected route */
         if (this.Auth.loggedIn())
             this.props.history.replace('/');
     }
@@ -75,9 +75,7 @@ class Login extends Component {
                         </form>
                         <Link className="link" to="/signup">Don't have an account? <span className="link-signup">Signup</span></Link>
                     </div>
-                    {/* <div className="signiture">
-                        <h1>Template Built & Designed by Roman Chvalbo</h1>
-                    </div> */}
+        
                 </div>
                 
             </React.Fragment>
