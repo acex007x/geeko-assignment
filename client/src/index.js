@@ -7,8 +7,8 @@ import Login from './login';
 import Signup from './signup';
 
 
-/* Here we will create our routes right off the bat in order to 
-prevent the user from getting very far in our app without authentication. */
+
+//prevent the user from getting  in our app without authentication. */
 ReactDOM.render(
     <Router>
         <div>
@@ -17,4 +17,4 @@ ReactDOM.render(
             <Route exact path="/signup" component={Signup} />
         </div>
     </Router>, document.getElementById('root'));
-// registerServiceWorker();
+

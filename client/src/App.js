@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 
-/* Once the 'Authservice' and 'withAuth' componenets are created, import them into App.js */
+
 import AuthHelperMethods from './components/AuthHelperMethods';
 
 //Our higher order component
@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     email: ''
   }
-  /* Create a new instance of the 'AuthHelperMethods' compoenent*/
+  /* new instance of the 'AuthHelperMethods' compoenent*/
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
@@ -27,7 +27,7 @@ class App extends Component {
     if (this.props.confirm) {
       name = this.props.confirm.email;
     }
-    //let name = this.props.confirm.email;
+   
     console.log("Rendering Appjs!")
     return (
 
@@ -47,7 +47,7 @@ class App extends Component {
   }
 }
 
-//In order for this component to be protected, we must wrap it with what we call a 'Higher Order Component' 
+//we are protecting the protected compomnemnt with HOC' 
 
 export default withAuth(App);
 

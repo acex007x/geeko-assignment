@@ -24,7 +24,7 @@ export default class AuthHelperMethods {
     loggedIn = () => {
         // Checks if there is a saved token and it's still valid
         const token = this.getToken() // Getting token from localstorage
-        return !!token && !this.isTokenExpired(token) // handwaiving here
+        return !!token && !this.isTokenExpired(token) 
     }
 
     isTokenExpired = (token) => {
@@ -37,7 +37,7 @@ export default class AuthHelperMethods {
                 return false;
         }
         catch (err) {
-            console.log("expired check failed! Line 42: AuthService.js");
+         
             return false;
         }
     }
@@ -65,7 +65,7 @@ export default class AuthHelperMethods {
     }
 
     fetch = (url, options) => {
-        // performs api calls sending the required authentication headers
+       
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -85,8 +85,8 @@ export default class AuthHelperMethods {
     }
 
     _checkStatus = (response) => {
-        // raises an error in case response status is not a success
-        if (response.status >= 200 && response.status < 300) { // Success status lies between 200 to 300
+     
+        if (response.status >= 200 && response.status < 300) { 
             return response
         } else {
             var error = new Error(response.statusText)

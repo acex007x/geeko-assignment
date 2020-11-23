@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthHelperMethods from './AuthHelperMethods';
 
-/* A higher order component is frequently written as a function that returns a class. */
+//higher order component
 export default function withAuth(AuthComponent) {
     
     const Auth = new AuthHelperMethods();
@@ -13,14 +13,14 @@ export default function withAuth(AuthComponent) {
             loaded: false
         }
 
-        /* In the componentDid<ount, we would want to do a couple of important tasks in order to verify the current users authentication status
+        /*  verify the current users authentication status
         prior to granting them enterance into the app. */
         componentWillMount() {
             if (!Auth.loggedIn()) {
                 this.props.history.replace('/login')
             }
             else {
-                /* Try to get confirmation message from the Auth helper. */
+                /* get confirmation message from the Auth helper. */
                 try {
                     
                     const confirm = Auth.getConfirm()
@@ -30,7 +30,7 @@ export default function withAuth(AuthComponent) {
                         loaded: true
                     })
                 }
-                /* Oh snap! Looks like there's an error so we'll print it out and log the user out for security reasons. */
+                /* logout redirect to login */
                 catch (err) {
                     console.log(err);
                     Auth.logout()
