@@ -72,9 +72,7 @@ export default class Signup extends Component {
                         </form>
                         <Link className="link" to="/login">Already have an account? <span className="link-signup">Login</span></Link>
                     </div>
-                    {/* <div className="signiture">
-                        <h1>Template Built & Designed by Roman Chvalbo</h1>
-                    </div> */}
+            
                 </div>
                 
             </React.Fragment>

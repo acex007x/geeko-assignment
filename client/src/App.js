@@ -47,7 +47,7 @@ class App extends Component {
   }
 }
 
-//In order for this component to be protected, we must wrap it with what we call a 'Higher Order Component' or HOC.
+//In order for this component to be protected, we must wrap it with what we call a 'Higher Order Component' 
 
 export default withAuth(App);
 
